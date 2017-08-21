@@ -10,3 +10,4 @@
         </ul>
     </div>
 </nav>
+<div *ngFor="let message of messages | async"> {{ message.msg }} </div>
