@@ -1,3 +1,12 @@
-<h1> {{ (user | async )?.displayName }} </h1>
-<button (click)="login()"> sign in </button>
-<button (click)="logout()"> sign out </button>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">{{ (user | async )?.displayName }}</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li *ngIf="!(user | async)" (click)="login()"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
+            <li *ngIf="(user | async)" (click)="logout()"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
+        </ul>
+    </div>
+</nav>
