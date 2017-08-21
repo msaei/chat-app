@@ -20,6 +20,14 @@ export class AppComponent {
 
   }
 
+  send(msg){
+    let message = {
+      msg: msg.value
+    }
+    this.messages.push(message);
+    msg.value='';
+  }
+
 
 
   login() {

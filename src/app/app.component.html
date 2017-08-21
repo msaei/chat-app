@@ -11,3 +11,5 @@
     </div>
 </nav>
 <div *ngFor="let message of messages | async"> {{ message.msg }} </div>
+<input #msg type="text" placeholder="write your massage">
+<button (click)="send(msg)">Send</button>
